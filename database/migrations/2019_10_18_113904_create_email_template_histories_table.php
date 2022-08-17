@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateEmailTemplateHistoriesTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('email_template_histories', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('emailtemp_id');
+            $table->string('mailable');
+            $table->string('template_name');
+            $table->string('subject');
+            $table->text('message');
+            $table->boolean('welcome_email');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('email_template_histories');
+    }
+}

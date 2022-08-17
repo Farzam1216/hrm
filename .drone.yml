@@ -1,0 +1,70 @@
+kind: pipeline
+name: continuous-integration
+steps:
+- name: lint
+  image: jakzal/phpqa
+  commands:
+  - php-cs-fixer fix --dry-run --verbose
+
+- name: install
+  image: thecodingmachine/php:7.3-v3-slim-cli
+  commands:
+  - sudo composer install
+  - sudo cp .env.example .env
+  - sudo php artisan key:generate
+
+- name: test
+  image: jakzal/phpqa
+  commands:
+  - vendor/bin/phpunit --no-coverage --colors=never
+
+- name: slack
+  image: plugins/slack
+  settings:
+    webhook: 
+      from_secret: slack_webhook
+    channel: dev-pipelines
+    username:
+      from_secret: slack_username
+    icon_url: 
+      from_secret: slack_icon_url
+    link_names: true
+    template: >
+      {{#failure build.status}}
+        Gleam HRM commit *<https://gitlab.com/glowLogix-repo/hrm/commit/{{build.commit}}|{{truncate build.commit 8}}>* on branch *{{build.branch}}* by *{{build.author}}* broke *<{{build.link}}|build {{build.number}}>*.
+      {{/failure}}
+  when:
+    status: failure
+
+trigger:
+  branch:
+    exclude:
+    - master
+
+---
+kind: pipeline
+type: docker
+name: continuous-deployment
+
+steps:
+- name: deploy
+  image: appleboy/drone-ssh
+  environment:
+    GITLAB_TOKEN:
+      from_secret: gitlab_token
+  settings:
+    host: ec2-3-15-158-242.us-east-2.compute.amazonaws.com
+    port: 22
+    username: ubuntu
+    key:
+      from_secret: ssh_key
+    envs:
+      - GITLAB_TOKEN
+    script:
+      - GITLAB_TOKEN=$GITLAB_TOKEN ./scripts/deploy-gleamhrm.sh
+
+trigger:
+  branch:
+    - master
+  event:
+  - push

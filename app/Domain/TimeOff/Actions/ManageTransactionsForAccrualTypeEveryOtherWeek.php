@@ -1,0 +1,34 @@
+<?php
+
+
+namespace App\Domain\TimeOff\Actions;
+
+class ManageTransactionsForAccrualTypeEveryOtherWeek
+{
+    /**
+     * @param $data
+     * @param $balance
+     * @param $type
+     * @param $policy
+     * @param $levelData
+     * @param $request
+     * @param $joining_date
+     * @param $currentDate
+     * @param $recentAutoTransaction
+     * @return mixed
+     */
+    public function execute($data, &$balance, $type, $policy, $levelData, $request, $joining_date, $currentDate, &$recentAutoTransaction)
+    {
+        //First Accrual
+        if ($recentAutoTransaction == null) {
+            $firstTransactionForAccrualTypeEveryOtherWeek = new  AddFirstTransactionForAccrualTypeEveryOtherWeek();
+            $isFirstAccrualHappen =  $firstTransactionForAccrualTypeEveryOtherWeek->execute($data, $request, $policy, $levelData, $currentDate, $balance, $recentAutoTransaction, $type);
+        }
+        //Runtimecalculations which start after most recent PTO transaction.
+        if ($recentAutoTransaction != null) {
+            $runTimeTransactionForAccrualTypeEveryOtherWeek = new AddRunTimeTransactionForAccrualTypeEveryOtherWeek();
+            $runTimeTransactionForAccrualTypeEveryOtherWeek->execute($data, $balance, $levelData, $policy, $currentDate, $recentAutoTransaction);
+        }
+        return $data;
+    }
+}

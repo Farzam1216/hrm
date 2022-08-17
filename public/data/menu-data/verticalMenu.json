@@ -1,0 +1,317 @@
+{
+  "menu": [
+    {
+      "url": "dashboard",
+      "name": "Dashboard",
+      "icon": "home",
+      "slug": "dashboard"
+    },
+
+    
+    {
+      "url": "inbox",
+      "name": "Inbox",
+      "icon": "mail",
+      "slug": "inbox"
+    },
+    {
+      "name": "Hiring",
+      "icon": "layers",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "candidates",
+          "name": "Candidates",
+          "icon": "circle",
+          "slug": "candidates"
+        },
+        {
+          "url": "job",
+          "name": "Job Opening",
+          "icon": "circle",
+          "slug": "job-opening"
+        }
+      ]
+    },
+    {
+      "name": "My Info",
+      "icon": "user",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "employee/edit/'.Auth::user()->id",
+          "name": "Personal",
+          "icon": "circle",
+          "slug": "personal"
+        },
+        {
+          "url": "app/ecommerce/details",
+          "name": "Document",
+          "icon": "circle",
+          "slug": "document"
+        },
+        {
+          "url": "/app/ecommerce/wishlist",
+          "name": "Assets",
+          "icon": "circle",
+          "slug": "/assets"
+        },
+        {
+          "url": "app/ecommerce/checkout",
+          "name": "My Tasks",
+          "icon": "circle",
+          "slug": "my-tasks"
+        }
+        ,
+        {
+          "url": "app/ecommerce/checkout",
+          "name": "Time Off",
+          "icon": "circle",
+          "slug": "time-off"
+        }
+        ,
+        {
+          "url": "app/ecommerce/checkout",
+          "name": "Benefits",
+          "icon": "circle",
+          "slug": "benefits"
+        },
+        {
+          "url": "app/ecommerce/checkout",
+          "name": "Dependent",
+          "icon": "circle",
+          "slug": "dependent"
+        }
+      ]
+    },
+    {
+      "name": "People Management",
+      "icon": "users",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "employees",
+          "name": "Employees",
+          "icon": "circle",
+          "slug": "employees"
+        },
+        {
+          "url": "organization-hierarchy",
+          "name": "Org Chart",
+          "icon": "circle",
+          "slug": "organization-hierarchy"
+        }
+      ]
+    },
+    {
+      "name": "Settings",
+      "icon": "settings",
+      "slug": "",
+      "submenu": [
+        {
+          "name": "Types",
+          "icon": "circle",
+          "slug": "",
+          "submenu":[
+            {
+              "url": "/education-types",
+              "name": "Education Type",
+              "icon": "minus",
+              "slug": "/education-types"
+            },
+            {
+              "url": "/asset-types",
+              "name": "Assets Type",
+              "icon": "minus",
+              "slug": "asset-types"
+            },
+            {
+              "url": "/visa-types",
+              "name": "Visa Type",
+              "icon": "minus",
+              "slug": "visa-types"
+            }
+          ]
+        },
+        {
+          "name": "Documents",
+          "icon": "circle",
+          "slug": "documents",
+          "submenu":[
+            {
+              "url": "documents",
+              "name": "Documents",
+              "slug": "documents"
+            },
+            {
+              "url": "doc-types",
+              "name": "Document Type",
+              "slug": "doc-types"
+            }
+          ]
+        },
+        {
+          "name": "Tasks",
+          "icon": "circle",
+          "slug": "tasks",
+          "submenu":[
+            {
+              "url": "/task-categories",
+              "name": "Task Category",
+              "slug": "/task-categories"
+            },
+            {
+              "url": "/tasks",
+              "name": "Task",
+              "slug": "tasks"
+            }
+          ]
+        },
+        {
+          "name": "Job",
+          "icon": "circle",
+          "slug": "job",
+          "submenu":[
+            {
+              "url": "locations",
+              "name": "Location",
+              "slug": "location"
+            },
+            {
+              "url": "departments",
+              "name": "Departments",
+              "slug": "Departments"
+            },
+            {
+              "url": "employmentstatus",
+              "name": "Employment Status",
+              "slug": "employmentstatus"
+            },
+            {
+              "url": "designations",
+              "name": "Designations",
+              "slug": "designations"
+            }
+            ,
+            {
+              "url": "divisions",
+              "name": "Division",
+              "slug": "divisions"
+            }
+          ]
+        },
+        {
+          "name": "Benefits",
+          "icon": "circle",
+          "slug": "benefits",
+          "submenu":[
+            {
+              "url": "benefit/benefit-plan",
+              "name": "Plans",
+              "slug": "plans"
+            },
+            {
+              "url": "benefitgroup",
+              "name": "Benefit Groups",
+              "slug": "benefitgroup"
+            }
+          ]
+        },
+        {
+          "name": "Time Off",
+          "icon": "circle",
+          "slug": "",
+          "submenu":[
+            {
+              "url": "timeofftype",
+              "name": "Time Off Type",
+              "slug": "timeofftype"
+            },
+            {
+              "url": "timeoff",
+              "name": "Time Off Policy",
+              "slug": "timeoff"
+            }
+          ]
+        }
+        ,
+        {
+          "name": "Hiring",
+          "icon": "circle",
+          "slug": "hiring",
+          "submenu":[
+            {
+              "url": "questiontype",
+              "name": "Question Type",
+              "slug": "questiontype"
+            },
+            {
+              "url": "question",
+              "name": "Canned Questions",
+              "slug": "question"
+            },
+            {
+              "url": "email-templates",
+              "name": "Email Templates",
+              "slug": "email-templates"
+            }
+          ]
+        },
+        {
+          "name": "Language",
+          "icon": "circle",
+          "slug": "language",
+          "submenu":[
+            {
+              "url": "language",
+              "name": "Change Language",
+              "slug": "change-language"
+            },
+            {
+              "url": "secondarylanguage",
+              "name": "Secondary language",
+              "slug": "secondarylanguage"
+            }
+          ]
+        },
+        {
+          "name": "Approvals",
+          "icon": "circle",
+          "slug": "app-ecommerce-wishlist"
+        },
+        {
+          "url": "app/ecommerce/checkout",
+          "name": "SMTP Details",
+          "icon": "circle",
+          "slug": "app-ecommerce-checkout"
+        }
+      ]
+    },
+    {
+      "name": "Manage Roles",
+      "icon": "lock",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "access-level",
+          "name": "Access Levels",
+          "icon": "circle",
+          "slug": "access-level"
+        }
+      ]
+    },
+    {
+      "name": "Support",
+      "icon": "book",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "help",
+          "name": "Contact Us",
+          "icon": "circle",
+          "slug": "help"
+        }
+      ]
+    }
+  ]
+}

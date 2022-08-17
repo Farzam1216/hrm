@@ -1,0 +1,90 @@
+
+* {
+    outline: none
+}
+
+
+
+html {
+    position: relative;
+    min-height: 100%;
+    background: #ffffff;
+    font-size: 85%; /* font-size 1em = 10px on default browser settings */ 
+
+}
+
+
+
+
+/* Rating Star Widgets Style */
+.rating-stars ul {
+    list-style-type:none;
+    padding:0;
+    
+    -moz-user-select:none;
+    -webkit-user-select:none;
+  }
+  .rating-stars ul > li.star {
+    display:inline-block;
+    
+  }
+  
+  /* Idle State of the stars */
+  .rating-stars ul > li.star > i.fa {
+    font-size:1.5em; /* Change the size of the stars */
+    color:#ccc; /* Color on idle state */
+  }
+  
+  /* Hover state of the stars */
+  .rating-stars ul > li.star.hover > i.fa {
+    color:#FFCC36;
+  }
+  
+  /* Selected state of the stars */
+  .rating-stars ul > li.star.selected > i.fa {
+    color:#FF912C;
+  }
+
+  /* Idle State of the stars */
+  .rating-stars ul > li.star > i.timeline-rating {
+    font-size:1em; /* Change the size of the stars */
+    color:#ccc; /* Color on idle state */
+  }
+  /* Selected state of the stars */
+  .rating-stars ul > li.star.selected > i.timeline-rating {
+    color:#FF912C;
+  }
+.fa-color-pto{
+  color:gray;
+
+} 
+.time-off-btns{
+  visibility: hidden;
+  opacity:0;
+ 
+}
+.time-off-type-box:hover  .time-off-btns, .time-off-btns:hover{
+  visibility: visible;
+  opacity:1;
+  transition:visibility 0.3s linear,opacity 0.3s linear, max-height 4s ease-out;
+} 
+.owl-prev,
+.owl-next {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+
+
+}
+
+.owl-prev {
+  left: -2rem;
+}
+
+.owl-next {
+  right: -2rem;
+}
+
+.owl-carousel .owl-stage-outer {
+  overflow: visible;
+}
