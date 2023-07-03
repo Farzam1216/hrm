@@ -31,8 +31,8 @@ $configData = Helper::applClasses();
   <div class="auth-inner row m-0">
     <!-- Brand logo-->
     <a class="brand-logo" href="javascript:void(0);">
-      <img class="dashboard-logo" src="{{asset('images/ico/glowlogixpng.png')}}" />
-      <h2 class="brand-text ml-1">GleamHR</h2>
+      <!-- <img class="dashboard-logo" src="{{asset('images/ico/glowlogixpng.png')}}" /> -->
+      <h2 class="brand-text ml-1">HRM</h2>
     </a>
     <!-- /Brand logo-->
     <!-- Left Text-->
@@ -53,7 +53,7 @@ $configData = Helper::applClasses();
           </form>           
         </div>
         @else
-        <h4 class="card-title mb-1">{{__('language.Welcome to Glowlogix HRM!')}}</h4>
+        <h4 class="card-title mb-1">Welcome to HRM!</h4>
         <p class="card-text mb-2">{{__('language.The ultimate HRM System.')}}</p>
         <h3>{{__('language.Sign In')}}</h3>
         @endif

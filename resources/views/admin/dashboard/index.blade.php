@@ -3,7 +3,7 @@
 @section('heading')
 @section('vendor-style')
     {{-- vendor css files --}}
-    <link rel="stylesheet" href="{{ asset(mix('vendors/css/charts/apexcharts.css')) }}">
+    <!-- <link rel="stylesheet" href="{{ asset(mix('vendors/css/charts/apexcharts.css')) }}"> -->
 @endsection
 @section('page-style')
     {{-- Page css files --}}

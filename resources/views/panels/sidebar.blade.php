@@ -8,9 +8,9 @@ $configData = Helper::applClasses();
       <li class="nav-item mr-auto">
         <a class="navbar-brand" href="{{url('/')}}">
           <span class="brand-logo">
-            <img src="{{asset('images/ico/glowlogixpng.png')}}" height="27px"/>
+            <!-- <img src="{{asset('images/ico/glowlogixpng.png')}}" height="27px"/> -->
           </span>
-          <h2 class="brand-text">GleamHR</h2>
+          <h2 class="brand-text">HRM</h2>
         </a>
       </li>
       <li class="nav-item nav-toggle">
